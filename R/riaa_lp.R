@@ -1,0 +1,26 @@
+#' Recording Industry Association of America Awards For Linkin Park
+#'
+#' @md
+#' @description A table that includes Awards given to Linkin Park by the
+#' Recording Industry Association of America (RIAA). Awards are given out
+#' by the RIAA based on number of copies sold, with albums that sell more
+#' than 500,000 are certified Gold, and albums that reach 1,000,000 certified
+#' sales are certified Platinum. A Diamond Award is also given for
+#' 10,000,000 sales. For certification purposes, each sale is a unit measured
+#' by one of the following:
+#' + Sale of digital or physical album
+#' + 10 individual track downloads
+#' + 1500 steamed audio or video from the album
+#'
+#' All data was scraped from the RIAA Gold/Platinum search.
+#'
+#' @format A tibble with 88 observations of 6 variables.
+#' \describe{
+#'   \item{album_title}{the name of the album}
+#'   \item{release_date}{date of album release}
+#'   \item{format}{the type of release c("album", "single")}
+#'   \item{certification}{certification type c("gold", "platinum")}
+#'   \item{certification_date}{date of certification}
+#'   \item{plat_modifier}{the multiplier for platinum i.e. 2x platinum or 11x platinum}
+#' }
+"riaa_lp"
