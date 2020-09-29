@@ -1,0 +1,86 @@
+---
+title: "Introducing {linkinpark}"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(linkinpark)
+library(tidyverse)
+library(gt)
+```
+
+In light of the 20th anniversary of Hybrid Theory by Linkin Park, I decided to put together a data package that contains a few different datasets about the band. 
+
+## What's Inside
+
+## Examples
+
+Using the billboard data for charted albums we can easily make a table with [{gt}](https://gt.rstudio.com/)
+
+
+
+
+```{r, billboard_data, echo=FALSE, message=FALSE}
+
+tribble(
+  ~album_title,	       ~peak_position,	~date_peaked,	~weeks_on_chart,
+  "Hybrid Theory"      ,	        	2,  "2002-01-11",           	215,
+  "Meteora"            ,            1,  "2003-01-11",      	      113, 
+  "Minutes To Midnight",           	1,	"2007-06-01",	             96,
+  "A Thousand Suns"    ,            1,	"2010-10-01",	             39,
+  "Living Things"	     ,            1,	"2012-07-13",	             36,
+  "Live In Texas"      ,           23,	"2003-12-05",	             35,
+  "Reanimation"        ,            2,	"2002-08-19",	             33,
+  "Collision Course"   ,          	1,	"2004-12-17",	             26,
+  "One More Light"     ,            1,	"2017-06-09",	             24,
+  "The Hunting Party"  ,            3,	"2014-07-04",	             20
+  ) %>%
+  arrange(date_peaked) %>%
+  gt::gt() %>% 
+  cols_label(album_title = "Album", 
+             peak_position = "Peak Position",
+             date_peaked = "Date Peaked", 
+             weeks_on_chart = "Weeks Charted") %>%
+  tab_header(md("**Linkin Park On Billboard's Hard Rock Chart**"))%>%
+  data_color(
+    columns = vars(weeks_on_chart), 
+    colors = scales::col_numeric(
+      c("white", "#F39524"), 
+      domain = NULL
+    )
+  ) %>%
+  fmt_date(columns = vars(date_peaked), date_style = 7) %>%    
+  cols_align(align = "right", columns = vars(date_peaked)) %>%
+
+  opt_table_lines(extent = "default") %>%
+  tab_options(
+    column_labels.border.top.color = "white",
+    column_labels.border.top.width = px(3),
+    column_labels.border.bottom.color = "#90998A",
+    table_body.hlines.color = "white",
+    table.border.bottom.color = "white",
+    table.border.bottom.width = px(3),
+    table.border.top.color = "white",
+    table.margin.left = px(20)
+  ) %>%
+  opt_align_table_header(align= "left") %>%
+  tab_style(
+    style = list(
+      cell_text(
+        font = google_font("Montserrat"),
+        size = px(25),
+        align = "left"
+      )
+    ),
+    locations = list(
+      cells_title(groups = "title")
+    )
+  ) %>%
+  tab_source_note("Data: Billboard.com" )
+  
+  
+
+```
+ 
+ 
