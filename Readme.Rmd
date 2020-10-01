@@ -8,18 +8,108 @@ knitr::opts_chunk$set(echo = TRUE)
 library(linkinpark)
 library(tidyverse)
 library(gt)
+library(delabj)
+
+table_style_lp <- function(gt){
+  gt%>%
+    opt_align_table_header(align= "left") %>%
+    tab_options(
+    column_labels.border.top.color = "white",
+    column_labels.border.top.width = px(3),
+    column_labels.border.bottom.color = "#90998A",
+    table_body.hlines.color = "white",
+    table.border.bottom.color = "white",
+    table.border.bottom.width = px(3),
+    table.border.top.color = "white",
+    table.margin.left = px(20)
+  ) %>%
+  tab_style(
+    style = list(
+      cell_text(
+        font = google_font("Montserrat"),
+        size = px(25),
+        align = "left"
+      )
+    ),
+    locations = list(
+      cells_title(groups = "title")
+    )
+  ) 
+}
 ```
 
-In light of the 20th anniversary of Hybrid Theory by Linkin Park, I decided to put together a data package that contains a few different datasets about the band. 
+With the 20th anniversary of Hybrid Theory by Linkin Park coming this month, I decided to put together a data package that contains a few different datasets about the band.
 
 ## What's Inside
+
+### Data
+
+#### Albums Charted By Billboard
+
+This is a relatively small data set containing data about peak positions on The Billboard Hard Rock Chart. This data includes the album name, peak position reached, the date it peaked and the number of weeks the album charted.
+
+```{r billboard_albums_example,message=FALSE,warning=FALSE }
+billboard_albums %>% 
+  head() %>%
+  gt() %>%
+  table_style_lp() %>%
+  tab_source_note("Data: Billboard.com" ) %>%
+  tab_header(md("**Billboard Albums**"))
+
+```
+
+#### RIAA Awards
+
+This dataset is a collection of awards from the Recording Industry Association of America that were given to Linkin Park. The RIAA certifies an album as gold after 500,000 sales, platinum with 1,000,000 sales, and then diamond after 10,000,000 sales. This data is sourced from the RIAA gold/platinum search. Their database however does not include diamond awards due to their rarity. For certification purposes a sale is a unit equivalent to one of the following:
+
+-   Sale of a digital of physical album
+
+-   10 individual track downloads
+
+-   1500 instances of streamed audio of video from the album
+
+```{r, echo = FALSE}
+
+tribble(~Variable,          ~Description, 
+        "album_title"       , "Name of the album", 
+        "release_date"      , "Date of album release",
+        "format"            , "Type of release (album or single)",
+        "certification"     , "Certification level (gold, platinum)",
+        "certification_date", "Date of certification",
+        "plat_modifer"      , "Number of times the album has reached platinum"
+        ) %>%
+  gt() %>% 
+  table_style_lp() %>%
+  tab_header(md("**RIAA Data Dictionary**"))
+
+
+
+```
+
+#### /r/linkinpark Top 100 Songs
+
+This data comes from a poll on [/r/linkinpark](<http://www.reddit.com/r/linkinpark)> using [allourideas](http://www.allourideas.org/linkinparksongs) where users selected their favorite song in head to head pairings. There were over 47,000 votes and this was the official results as of 2020-07-02.
+
+```{r, echo = FALSE}
+
+tribble(~Variable,          ~Description, 
+        "Rank"       , "Ranking of the song", 
+        "Track"      , "Name of the track",
+        "Album"      , "Album the track appeared on",
+        "score"      , "The Percentage of wins of a given song"
+        ) %>%
+  gt() %>% 
+  table_style_lp() %>%
+  tab_header(md("**Top 100 Songs Data Dictionary**"))
+```
+
+#### Audio Features
+
+A data set created by using the {`spotifyr`} package to access the spotify API's audio features for all Linkin Park Content on spotify. This is provided as a connivance instead of a user set up a spotify API workflow.
 
 ## Examples
 
 Using the billboard data for charted albums we can easily make a table with [{gt}](https://gt.rstudio.com/)
-
-
-
 
 ```{r, billboard_data, echo=FALSE, message=FALSE}
 
@@ -82,5 +172,150 @@ tribble(
   
 
 ```
- 
- 
+
+Using the spotify audio features we can see how different aspects of the bands sound evolved over time
+
+```{r, message = FALSE, warning = FALSE}
+
+audio_features %>%
+  select(
+    track_name,
+    album_name,
+    album_release_date,
+    danceability,
+    energy,
+    speechiness,
+    acousticness,
+    valence 
+    ) %>%
+  mutate(album_release_date = lubridate::ymd(album_release_date),
+         age = lubridate::ymd("2020-10-01") - album_release_date, 
+         age = as.numeric(age, units = "days")/365)%>%
+  pivot_longer(
+    names_to = "measure", 
+    values_to = "values", 
+    cols = c(danceability, 
+             energy, 
+             speechiness, 
+             acousticness,
+             valence)
+    ) %>%
+  group_by(
+    track_name,
+    album_name, 
+    age,
+    measure
+    )%>%
+  # There are duplicate listings based on region  
+  # and they can vary on values slightly
+  summarise(values = median(values)) %>%
+  ungroup() %>%
+  mutate(measure = factor(measure, levels = c("valence", "acousticness", "speechiness", "danceability", 
+             "energy"
+             ))) %>%
+  filter(str_detect(tolower(album_name), "live", TRUE)) %>%
+  ggplot(aes(x=measure, y = values))+
+    geom_line(aes(color = age, group = track_name), alpha = .3, size= .02)+
+    geom_point(aes(color = age))+
+    theme_delabj()+
+    scale_color_delabj("zune", discrete = FALSE)+
+    guides(
+      color = guide_colorbar(title = "Track Age", 
+                             title.position = "top", 
+                             title.hjust = .5,
+                             barwidth = 15
+                            ))+
+  labs(
+    title = "Linkin Park's Audio Features", 
+    y=NULL)
+
+```
+
+Or we can look at these by just the albums for a slightly less chaotic plot
+
+```{r}
+audio_features %>%
+  group_by(track_name, album_name, album_release_date) %>%
+  summarize(valence=median(valence)) %>%
+  filter(str_detect(tolower(album_name), "live", TRUE)) %>%
+  filter(str_detect(tolower(album_name), "acapellas", TRUE)) %>%
+  ggplot(aes(x=fct_reorder(album_name, album_release_date), y = valence))+
+    geom_boxplot(aes(color = fct_reorder(album_name, album_release_date), 
+                     fill = fct_reorder(album_name, album_release_date)), 
+                 alpha = .3)+
+    geom_point(aes(color = fct_reorder(album_name, album_release_date)), position = "jitter")+
+    theme_delabj()+
+    scale_color_delabj("retro")+
+    scale_fill_delabj("retro")+
+    labs(
+      title = "The energy of Linkin Park Albums", 
+      y=NULL, 
+      x=NULL,
+      color = "Album Name",
+      fill = "Album Name")+
+  legend_none()+
+  scale_x_discrete(guide = guide_axis(n.dodge = 2))
+
+```
+
+We can also look at the RIAA certifications
+
+```{r}
+riaa_lp %>%
+  na.omit() %>%
+  filter(format == "Album") %>%
+  ggplot()+
+   geom_point(aes(x=certification_date, 
+             y = fct_reorder(album_title, release_date),
+             size = plat_modifier, color = album_title),
+             alpha = .75)+
+  geom_vline(aes(xintercept = lubridate::ymd("2017-07-20"), alpha = .5))+
+  theme_delabj()+
+  scale_color_delabj()+
+  labs(
+    title = "Linkin Park Timeline of Awards", 
+    subtitle = "After Chester Died there was a resurgance of purchaces",
+    y = NULL, 
+    x = "Date")+
+  legend_none()+
+  geom_text(data = data.frame(x = as.Date("2015-04-06"),
+y = 8.32247240968638,
+label = "Chester's Death"),
+mapping = aes(x = x,
+y = y,
+label = label),
+angle = 0L,
+lineheight = 1L,
+hjust = 0.5,
+vjust = 0.5,
+colour = "black",
+family = "sans",
+fontface = "plain",
+inherit.aes = FALSE,
+show.legend = FALSE)+
+  geom_curve(data = data.frame(x = as.Date("2014-10-21"),
+y = 7.83474315204446,
+xend = as.Date("2017-06-08"),
+yend = 4.55069948392219),
+mapping = aes(x = x,
+y = y,
+xend = xend,
+yend = yend),
+angle = 90L,
+colour = "black",
+curvature = 0.5,
+arrow = structure(list(angle = 30,
+length = structure(0.1,
+class = "unit",
+valid.unit = 2L,
+unit = "inches"),
+ends = 2L,
+type = 2L),
+class = "arrow"),
+inherit.aes = FALSE,
+show.legend = FALSE)
+
+
+  
+
+```
