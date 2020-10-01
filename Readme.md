@@ -5,6 +5,12 @@ With the 20th anniversary of Hybrid Theory by Linkin Park coming this
 month, I decided to put together a data package that contains a few
 different datasets about the band.
 
+## How To Get
+
+You can install the package using the remotes package
+
+`remotes::install_github('delabj/linkinpark')`
+
 ## What’s Inside
 
 ### Data
@@ -31,7 +37,7 @@ billboard_albums %>%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qehwdenayf .gt_table {
+#cinljhmcdf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: 20px;
@@ -56,7 +62,7 @@ billboard_albums %>%
   border-left-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_heading {
+#cinljhmcdf .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -68,7 +74,7 @@ billboard_albums %>%
   border-right-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_title {
+#cinljhmcdf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -78,7 +84,7 @@ billboard_albums %>%
   border-bottom-width: 0;
 }
 
-#qehwdenayf .gt_subtitle {
+#cinljhmcdf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -88,13 +94,13 @@ billboard_albums %>%
   border-top-width: 0;
 }
 
-#qehwdenayf .gt_bottom_border {
+#cinljhmcdf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_col_headings {
+#cinljhmcdf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: white;
@@ -109,7 +115,7 @@ billboard_albums %>%
   border-right-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_col_heading {
+#cinljhmcdf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -129,7 +135,7 @@ billboard_albums %>%
   overflow-x: hidden;
 }
 
-#qehwdenayf .gt_column_spanner_outer {
+#cinljhmcdf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -141,15 +147,15 @@ billboard_albums %>%
   padding-right: 4px;
 }
 
-#qehwdenayf .gt_column_spanner_outer:first-child {
+#cinljhmcdf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qehwdenayf .gt_column_spanner_outer:last-child {
+#cinljhmcdf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qehwdenayf .gt_column_spanner {
+#cinljhmcdf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #90998A;
@@ -161,7 +167,7 @@ billboard_albums %>%
   width: 100%;
 }
 
-#qehwdenayf .gt_group_heading {
+#cinljhmcdf .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -183,7 +189,7 @@ billboard_albums %>%
   vertical-align: middle;
 }
 
-#qehwdenayf .gt_empty_group_heading {
+#cinljhmcdf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -198,15 +204,15 @@ billboard_albums %>%
   vertical-align: middle;
 }
 
-#qehwdenayf .gt_from_md > :first-child {
+#cinljhmcdf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qehwdenayf .gt_from_md > :last-child {
+#cinljhmcdf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qehwdenayf .gt_row {
+#cinljhmcdf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -225,7 +231,7 @@ billboard_albums %>%
   overflow-x: hidden;
 }
 
-#qehwdenayf .gt_stub {
+#cinljhmcdf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -237,7 +243,7 @@ billboard_albums %>%
   padding-left: 12px;
 }
 
-#qehwdenayf .gt_summary_row {
+#cinljhmcdf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -247,7 +253,7 @@ billboard_albums %>%
   padding-right: 5px;
 }
 
-#qehwdenayf .gt_first_summary_row {
+#cinljhmcdf .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -257,7 +263,7 @@ billboard_albums %>%
   border-top-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_grand_summary_row {
+#cinljhmcdf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -267,7 +273,7 @@ billboard_albums %>%
   padding-right: 5px;
 }
 
-#qehwdenayf .gt_first_grand_summary_row {
+#cinljhmcdf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -277,11 +283,11 @@ billboard_albums %>%
   border-top-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_striped {
+#cinljhmcdf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qehwdenayf .gt_table_body {
+#cinljhmcdf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -290,7 +296,7 @@ billboard_albums %>%
   border-bottom-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_footnotes {
+#cinljhmcdf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -304,13 +310,13 @@ billboard_albums %>%
   border-right-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_footnote {
+#cinljhmcdf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qehwdenayf .gt_sourcenotes {
+#cinljhmcdf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -324,47 +330,47 @@ billboard_albums %>%
   border-right-color: #D3D3D3;
 }
 
-#qehwdenayf .gt_sourcenote {
+#cinljhmcdf .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qehwdenayf .gt_left {
+#cinljhmcdf .gt_left {
   text-align: left;
 }
 
-#qehwdenayf .gt_center {
+#cinljhmcdf .gt_center {
   text-align: center;
 }
 
-#qehwdenayf .gt_right {
+#cinljhmcdf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qehwdenayf .gt_font_normal {
+#cinljhmcdf .gt_font_normal {
   font-weight: normal;
 }
 
-#qehwdenayf .gt_font_bold {
+#cinljhmcdf .gt_font_bold {
   font-weight: bold;
 }
 
-#qehwdenayf .gt_font_italic {
+#cinljhmcdf .gt_font_italic {
   font-style: italic;
 }
 
-#qehwdenayf .gt_super {
+#cinljhmcdf .gt_super {
   font-size: 65%;
 }
 
-#qehwdenayf .gt_footnote_marks {
+#cinljhmcdf .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
 
-<div id="qehwdenayf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="cinljhmcdf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 
 <table class="gt_table">
 
@@ -636,7 +642,7 @@ sale is a unit equivalent to one of the following:
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#reunclolfb .gt_table {
+#uzpdacqkyp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: 20px;
@@ -661,7 +667,7 @@ sale is a unit equivalent to one of the following:
   border-left-color: #D3D3D3;
 }
 
-#reunclolfb .gt_heading {
+#uzpdacqkyp .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -673,7 +679,7 @@ sale is a unit equivalent to one of the following:
   border-right-color: #D3D3D3;
 }
 
-#reunclolfb .gt_title {
+#uzpdacqkyp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -683,7 +689,7 @@ sale is a unit equivalent to one of the following:
   border-bottom-width: 0;
 }
 
-#reunclolfb .gt_subtitle {
+#uzpdacqkyp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -693,13 +699,13 @@ sale is a unit equivalent to one of the following:
   border-top-width: 0;
 }
 
-#reunclolfb .gt_bottom_border {
+#uzpdacqkyp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#reunclolfb .gt_col_headings {
+#uzpdacqkyp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: white;
@@ -714,7 +720,7 @@ sale is a unit equivalent to one of the following:
   border-right-color: #D3D3D3;
 }
 
-#reunclolfb .gt_col_heading {
+#uzpdacqkyp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -734,7 +740,7 @@ sale is a unit equivalent to one of the following:
   overflow-x: hidden;
 }
 
-#reunclolfb .gt_column_spanner_outer {
+#uzpdacqkyp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -746,15 +752,15 @@ sale is a unit equivalent to one of the following:
   padding-right: 4px;
 }
 
-#reunclolfb .gt_column_spanner_outer:first-child {
+#uzpdacqkyp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#reunclolfb .gt_column_spanner_outer:last-child {
+#uzpdacqkyp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#reunclolfb .gt_column_spanner {
+#uzpdacqkyp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #90998A;
@@ -766,7 +772,7 @@ sale is a unit equivalent to one of the following:
   width: 100%;
 }
 
-#reunclolfb .gt_group_heading {
+#uzpdacqkyp .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -788,7 +794,7 @@ sale is a unit equivalent to one of the following:
   vertical-align: middle;
 }
 
-#reunclolfb .gt_empty_group_heading {
+#uzpdacqkyp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -803,15 +809,15 @@ sale is a unit equivalent to one of the following:
   vertical-align: middle;
 }
 
-#reunclolfb .gt_from_md > :first-child {
+#uzpdacqkyp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#reunclolfb .gt_from_md > :last-child {
+#uzpdacqkyp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#reunclolfb .gt_row {
+#uzpdacqkyp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -830,7 +836,7 @@ sale is a unit equivalent to one of the following:
   overflow-x: hidden;
 }
 
-#reunclolfb .gt_stub {
+#uzpdacqkyp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -842,7 +848,7 @@ sale is a unit equivalent to one of the following:
   padding-left: 12px;
 }
 
-#reunclolfb .gt_summary_row {
+#uzpdacqkyp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -852,7 +858,7 @@ sale is a unit equivalent to one of the following:
   padding-right: 5px;
 }
 
-#reunclolfb .gt_first_summary_row {
+#uzpdacqkyp .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -862,7 +868,7 @@ sale is a unit equivalent to one of the following:
   border-top-color: #D3D3D3;
 }
 
-#reunclolfb .gt_grand_summary_row {
+#uzpdacqkyp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -872,7 +878,7 @@ sale is a unit equivalent to one of the following:
   padding-right: 5px;
 }
 
-#reunclolfb .gt_first_grand_summary_row {
+#uzpdacqkyp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -882,11 +888,11 @@ sale is a unit equivalent to one of the following:
   border-top-color: #D3D3D3;
 }
 
-#reunclolfb .gt_striped {
+#uzpdacqkyp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#reunclolfb .gt_table_body {
+#uzpdacqkyp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -895,7 +901,7 @@ sale is a unit equivalent to one of the following:
   border-bottom-color: #D3D3D3;
 }
 
-#reunclolfb .gt_footnotes {
+#uzpdacqkyp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -909,13 +915,13 @@ sale is a unit equivalent to one of the following:
   border-right-color: #D3D3D3;
 }
 
-#reunclolfb .gt_footnote {
+#uzpdacqkyp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#reunclolfb .gt_sourcenotes {
+#uzpdacqkyp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -929,47 +935,47 @@ sale is a unit equivalent to one of the following:
   border-right-color: #D3D3D3;
 }
 
-#reunclolfb .gt_sourcenote {
+#uzpdacqkyp .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#reunclolfb .gt_left {
+#uzpdacqkyp .gt_left {
   text-align: left;
 }
 
-#reunclolfb .gt_center {
+#uzpdacqkyp .gt_center {
   text-align: center;
 }
 
-#reunclolfb .gt_right {
+#uzpdacqkyp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#reunclolfb .gt_font_normal {
+#uzpdacqkyp .gt_font_normal {
   font-weight: normal;
 }
 
-#reunclolfb .gt_font_bold {
+#uzpdacqkyp .gt_font_bold {
   font-weight: bold;
 }
 
-#reunclolfb .gt_font_italic {
+#uzpdacqkyp .gt_font_italic {
   font-style: italic;
 }
 
-#reunclolfb .gt_super {
+#uzpdacqkyp .gt_super {
   font-size: 65%;
 }
 
-#reunclolfb .gt_footnote_marks {
+#uzpdacqkyp .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
 
-<div id="reunclolfb" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="uzpdacqkyp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 
 <table class="gt_table">
 
@@ -1135,7 +1141,7 @@ selected their favorite song in head to head pairings. There were over
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yjgnyrioyy .gt_table {
+#edbacqvsjq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: 20px;
@@ -1160,7 +1166,7 @@ selected their favorite song in head to head pairings. There were over
   border-left-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_heading {
+#edbacqvsjq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1172,7 +1178,7 @@ selected their favorite song in head to head pairings. There were over
   border-right-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_title {
+#edbacqvsjq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1182,7 +1188,7 @@ selected their favorite song in head to head pairings. There were over
   border-bottom-width: 0;
 }
 
-#yjgnyrioyy .gt_subtitle {
+#edbacqvsjq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1192,13 +1198,13 @@ selected their favorite song in head to head pairings. There were over
   border-top-width: 0;
 }
 
-#yjgnyrioyy .gt_bottom_border {
+#edbacqvsjq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_col_headings {
+#edbacqvsjq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: white;
@@ -1213,7 +1219,7 @@ selected their favorite song in head to head pairings. There were over
   border-right-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_col_heading {
+#edbacqvsjq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1233,7 +1239,7 @@ selected their favorite song in head to head pairings. There were over
   overflow-x: hidden;
 }
 
-#yjgnyrioyy .gt_column_spanner_outer {
+#edbacqvsjq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1245,15 +1251,15 @@ selected their favorite song in head to head pairings. There were over
   padding-right: 4px;
 }
 
-#yjgnyrioyy .gt_column_spanner_outer:first-child {
+#edbacqvsjq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yjgnyrioyy .gt_column_spanner_outer:last-child {
+#edbacqvsjq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yjgnyrioyy .gt_column_spanner {
+#edbacqvsjq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #90998A;
@@ -1265,7 +1271,7 @@ selected their favorite song in head to head pairings. There were over
   width: 100%;
 }
 
-#yjgnyrioyy .gt_group_heading {
+#edbacqvsjq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1287,7 +1293,7 @@ selected their favorite song in head to head pairings. There were over
   vertical-align: middle;
 }
 
-#yjgnyrioyy .gt_empty_group_heading {
+#edbacqvsjq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1302,15 +1308,15 @@ selected their favorite song in head to head pairings. There were over
   vertical-align: middle;
 }
 
-#yjgnyrioyy .gt_from_md > :first-child {
+#edbacqvsjq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yjgnyrioyy .gt_from_md > :last-child {
+#edbacqvsjq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yjgnyrioyy .gt_row {
+#edbacqvsjq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1329,7 +1335,7 @@ selected their favorite song in head to head pairings. There were over
   overflow-x: hidden;
 }
 
-#yjgnyrioyy .gt_stub {
+#edbacqvsjq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1341,7 +1347,7 @@ selected their favorite song in head to head pairings. There were over
   padding-left: 12px;
 }
 
-#yjgnyrioyy .gt_summary_row {
+#edbacqvsjq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1351,7 +1357,7 @@ selected their favorite song in head to head pairings. There were over
   padding-right: 5px;
 }
 
-#yjgnyrioyy .gt_first_summary_row {
+#edbacqvsjq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1361,7 +1367,7 @@ selected their favorite song in head to head pairings. There were over
   border-top-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_grand_summary_row {
+#edbacqvsjq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1371,7 +1377,7 @@ selected their favorite song in head to head pairings. There were over
   padding-right: 5px;
 }
 
-#yjgnyrioyy .gt_first_grand_summary_row {
+#edbacqvsjq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1381,11 +1387,11 @@ selected their favorite song in head to head pairings. There were over
   border-top-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_striped {
+#edbacqvsjq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yjgnyrioyy .gt_table_body {
+#edbacqvsjq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1394,7 +1400,7 @@ selected their favorite song in head to head pairings. There were over
   border-bottom-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_footnotes {
+#edbacqvsjq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1408,13 +1414,13 @@ selected their favorite song in head to head pairings. There were over
   border-right-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_footnote {
+#edbacqvsjq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#yjgnyrioyy .gt_sourcenotes {
+#edbacqvsjq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1428,47 +1434,47 @@ selected their favorite song in head to head pairings. There were over
   border-right-color: #D3D3D3;
 }
 
-#yjgnyrioyy .gt_sourcenote {
+#edbacqvsjq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#yjgnyrioyy .gt_left {
+#edbacqvsjq .gt_left {
   text-align: left;
 }
 
-#yjgnyrioyy .gt_center {
+#edbacqvsjq .gt_center {
   text-align: center;
 }
 
-#yjgnyrioyy .gt_right {
+#edbacqvsjq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yjgnyrioyy .gt_font_normal {
+#edbacqvsjq .gt_font_normal {
   font-weight: normal;
 }
 
-#yjgnyrioyy .gt_font_bold {
+#edbacqvsjq .gt_font_bold {
   font-weight: bold;
 }
 
-#yjgnyrioyy .gt_font_italic {
+#edbacqvsjq .gt_font_italic {
   font-style: italic;
 }
 
-#yjgnyrioyy .gt_super {
+#edbacqvsjq .gt_super {
   font-size: 65%;
 }
 
-#yjgnyrioyy .gt_footnote_marks {
+#edbacqvsjq .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
 
-<div id="yjgnyrioyy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="edbacqvsjq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 
 <table class="gt_table">
 
@@ -1606,7 +1612,7 @@ with [{gt}](https://gt.rstudio.com/)
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#wcxxpugqgk .gt_table {
+#zbnrpnyxvf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: 20px;
@@ -1631,7 +1637,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-left-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_heading {
+#zbnrpnyxvf .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1643,7 +1649,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-right-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_title {
+#zbnrpnyxvf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1653,7 +1659,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-bottom-width: 0;
 }
 
-#wcxxpugqgk .gt_subtitle {
+#zbnrpnyxvf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1663,13 +1669,13 @@ with [{gt}](https://gt.rstudio.com/)
   border-top-width: 0;
 }
 
-#wcxxpugqgk .gt_bottom_border {
+#zbnrpnyxvf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_col_headings {
+#zbnrpnyxvf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: white;
@@ -1684,7 +1690,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-right-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_col_heading {
+#zbnrpnyxvf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1704,7 +1710,7 @@ with [{gt}](https://gt.rstudio.com/)
   overflow-x: hidden;
 }
 
-#wcxxpugqgk .gt_column_spanner_outer {
+#zbnrpnyxvf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1716,15 +1722,15 @@ with [{gt}](https://gt.rstudio.com/)
   padding-right: 4px;
 }
 
-#wcxxpugqgk .gt_column_spanner_outer:first-child {
+#zbnrpnyxvf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wcxxpugqgk .gt_column_spanner_outer:last-child {
+#zbnrpnyxvf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wcxxpugqgk .gt_column_spanner {
+#zbnrpnyxvf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #90998A;
@@ -1736,7 +1742,7 @@ with [{gt}](https://gt.rstudio.com/)
   width: 100%;
 }
 
-#wcxxpugqgk .gt_group_heading {
+#zbnrpnyxvf .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1758,7 +1764,7 @@ with [{gt}](https://gt.rstudio.com/)
   vertical-align: middle;
 }
 
-#wcxxpugqgk .gt_empty_group_heading {
+#zbnrpnyxvf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1773,15 +1779,15 @@ with [{gt}](https://gt.rstudio.com/)
   vertical-align: middle;
 }
 
-#wcxxpugqgk .gt_from_md > :first-child {
+#zbnrpnyxvf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wcxxpugqgk .gt_from_md > :last-child {
+#zbnrpnyxvf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wcxxpugqgk .gt_row {
+#zbnrpnyxvf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1800,7 +1806,7 @@ with [{gt}](https://gt.rstudio.com/)
   overflow-x: hidden;
 }
 
-#wcxxpugqgk .gt_stub {
+#zbnrpnyxvf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1812,7 +1818,7 @@ with [{gt}](https://gt.rstudio.com/)
   padding-left: 12px;
 }
 
-#wcxxpugqgk .gt_summary_row {
+#zbnrpnyxvf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1822,7 +1828,7 @@ with [{gt}](https://gt.rstudio.com/)
   padding-right: 5px;
 }
 
-#wcxxpugqgk .gt_first_summary_row {
+#zbnrpnyxvf .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1832,7 +1838,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-top-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_grand_summary_row {
+#zbnrpnyxvf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1842,7 +1848,7 @@ with [{gt}](https://gt.rstudio.com/)
   padding-right: 5px;
 }
 
-#wcxxpugqgk .gt_first_grand_summary_row {
+#zbnrpnyxvf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1852,11 +1858,11 @@ with [{gt}](https://gt.rstudio.com/)
   border-top-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_striped {
+#zbnrpnyxvf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wcxxpugqgk .gt_table_body {
+#zbnrpnyxvf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1865,7 +1871,7 @@ with [{gt}](https://gt.rstudio.com/)
   border-bottom-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_footnotes {
+#zbnrpnyxvf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1879,13 +1885,13 @@ with [{gt}](https://gt.rstudio.com/)
   border-right-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_footnote {
+#zbnrpnyxvf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#wcxxpugqgk .gt_sourcenotes {
+#zbnrpnyxvf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1899,47 +1905,47 @@ with [{gt}](https://gt.rstudio.com/)
   border-right-color: #D3D3D3;
 }
 
-#wcxxpugqgk .gt_sourcenote {
+#zbnrpnyxvf .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#wcxxpugqgk .gt_left {
+#zbnrpnyxvf .gt_left {
   text-align: left;
 }
 
-#wcxxpugqgk .gt_center {
+#zbnrpnyxvf .gt_center {
   text-align: center;
 }
 
-#wcxxpugqgk .gt_right {
+#zbnrpnyxvf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wcxxpugqgk .gt_font_normal {
+#zbnrpnyxvf .gt_font_normal {
   font-weight: normal;
 }
 
-#wcxxpugqgk .gt_font_bold {
+#zbnrpnyxvf .gt_font_bold {
   font-weight: bold;
 }
 
-#wcxxpugqgk .gt_font_italic {
+#zbnrpnyxvf .gt_font_italic {
   font-style: italic;
 }
 
-#wcxxpugqgk .gt_super {
+#zbnrpnyxvf .gt_super {
   font-size: 65%;
 }
 
-#wcxxpugqgk .gt_footnote_marks {
+#zbnrpnyxvf .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
 
-<div id="wcxxpugqgk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="zbnrpnyxvf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 
 <table class="gt_table">
 

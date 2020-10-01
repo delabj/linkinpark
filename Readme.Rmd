@@ -40,6 +40,12 @@ table_style_lp <- function(gt){
 
 With the 20th anniversary of Hybrid Theory by Linkin Park coming this month, I decided to put together a data package that contains a few different datasets about the band.
 
+## How To Get
+
+You can install the package using the remotes package
+
+`remotes::install_github('delabj/linkinpark')`
+
 ## What's Inside
 
 ### Data
