@@ -233,7 +233,7 @@ audio_features %>%
 
 Or we can look at these by just the albums for a slightly less chaotic plot
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 audio_features %>%
   group_by(track_name, album_name, album_release_date) %>%
   summarize(valence=median(valence)) %>%
@@ -260,7 +260,7 @@ audio_features %>%
 
 We can also look at the RIAA certifications
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 riaa_lp %>%
   na.omit() %>%
   filter(format == "Album") %>%
