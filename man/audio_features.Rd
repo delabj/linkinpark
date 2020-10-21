@@ -4,7 +4,7 @@
 \name{audio_features}
 \alias{audio_features}
 \title{Audio Features of Linkin Park Songs}
-\format{A tibble of 468 observations of 39 variables
+\format{A tibble of 6577 observations of 39 variables
 
 See the Spotify API documentation for audio features.  https://developer.spotify.com/documentation/web-api/}
 \usage{
