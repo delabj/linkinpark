@@ -1,9 +1,11 @@
 Introducing {linkinpark}
 ================
 
-With the 20th anniversary of Hybrid Theory by Linkin Park coming this
-month, I decided to put together a data package that contains a few
-different datasets about the band.
+<img src='linkinpark.png' align="right" height="138" />
+
+With the 20th anniversary of Hybrid Theory by Linkin Park, I decided to
+put together a data package that contains a few different datasets about
+the band.
 
 ## How To Get
 
@@ -28,14 +30,14 @@ billboard_albums %>%
   knitr::kable()
 ```
 
-| album\_title        | peak\_position | date\_peaked | weeks\_on\_chart |
-| :------------------ | -------------: | :----------- | ---------------: |
-| Hybrid Theory       |              2 | 2002-01-11   |              215 |
-| Meteora             |              1 | 2003-01-11   |              113 |
-| Minutes To Midnight |              1 | 2007-06-01   |               96 |
-| A Thousand Suns     |              1 | 2010-10-01   |               39 |
-| Living Things       |              1 | 2012-07-13   |               36 |
-| Live In Texas       |             23 | 2003-12-05   |               35 |
+| album\_title        | peak\_position | date\_peaked | weeks\_on\_chart | chart\_name |
+| :------------------ | -------------: | :----------- | ---------------: | :---------- |
+| Hybrid Theory       |              2 | 2002-01-11   |              216 | Album Sales |
+| Meteora             |              1 | 2003-01-11   |              113 | Album Sales |
+| Minutes To Midnight |              1 | 2007-06-01   |               96 | Album Sales |
+| A Thousand Suns     |              1 | 2010-10-01   |               39 | Album Sales |
+| Living Things       |              1 | 2012-07-13   |               36 | Album Sales |
+| Live In Texas       |             23 | 2003-12-05   |               35 | Album Sales |
 
 #### RIAA Awards
 
@@ -142,6 +144,8 @@ bands sound evolved over time
 
 ``` r
 audio_features %>%
+  filter(album_name %in% 
+           genius_lycics$album) %>% distinct() %>%
   select(
     track_name,
     album_name,
@@ -200,21 +204,36 @@ Or we can look at these by just the albums for a slightly less chaotic
 plot
 
 ``` r
-audio_features %>%
-  group_by(track_name, album_name, album_release_date) %>%
-  summarize(valence=median(valence)) %>%
+release_dates <- audio_features %>%
+  filter(album_type=="album") %>%
+  group_by(album_name, ) %>%
+  summarize(album_release_date = max(album_release_date)) %>%
   filter(str_detect(tolower(album_name), "live", TRUE)) %>%
   filter(str_detect(tolower(album_name), "acapellas", TRUE)) %>%
-  ggplot(aes(x=fct_reorder(album_name, album_release_date), y = valence))+
-    geom_boxplot(aes(color = fct_reorder(album_name, album_release_date), 
-                     fill = fct_reorder(album_name, album_release_date)), 
+  filter(album_name %in% 
+           genius_lycics$album) %>% distinct() %>%
+  arrange(album_release_date)
+
+
+audio_features %>%
+  filter(album_type=="album") %>%
+  group_by(track_name, album_name) %>%
+  summarize(energy=median(energy)) %>%
+  filter(str_detect(tolower(album_name), "live", TRUE)) %>%
+  filter(str_detect(tolower(album_name), "acapellas", TRUE)) %>%
+  filter(album_name %in% 
+           genius_lycics$album) %>% 
+  mutate(album_name = factor(album_name, levels = release_dates$album_name)) %>%
+  ggplot(aes(x=album_name, y = energy))+
+    geom_boxplot(aes(color = album_name, 
+                     fill = album_name), 
                  alpha = .3)+
-    geom_point(aes(color = fct_reorder(album_name, album_release_date)), position = "jitter")+
+    geom_point(aes(color =album_name), position = "jitter")+
     theme_delabj()+
     scale_color_delabj("retro")+
     scale_fill_delabj("retro")+
     labs(
-      title = "The energy of Linkin Park Albums", 
+      title = "The Energy of Linkin Park Albums", 
       y=NULL, 
       x=NULL,
       color = "Album Name",
@@ -230,15 +249,20 @@ We can also look at the RIAA certifications
 ``` r
 riaa_lp %>%
   na.omit() %>%
-  filter(format == "Album") %>%
+  dplyr::filter(format == "Album") %>%
+  mutate(size = case_when(
+    certification == "Gold" ~ 500000,
+    TRUE ~ 1000000 
+  )) %>%
   ggplot()+
-   geom_point(aes(x=certification_date, 
-             y = fct_reorder(album_title, release_date),
-             size = plat_modifier, color = album_title),
+  geom_point(aes(x=certification_date, 
+                 y = fct_reorder(album_title, release_date),
+                 size = size, color = album_title),
              alpha = .75)+
   geom_vline(aes(xintercept = lubridate::ymd("2017-07-20"), alpha = .5))+
   theme_delabj()+
   scale_color_delabj()+
+  scale_size_continuous(range = c(4, 8))+
   labs(
     title = "Linkin Park Timeline of Awards", 
     subtitle = "After Chester Died there was a resurgance of purchaces",
@@ -246,41 +270,42 @@ riaa_lp %>%
     x = "Date")+
   legend_none()+
   geom_text(data = data.frame(x = as.Date("2015-04-06"),
-y = 8.32247240968638,
-label = "Chester's Death"),
-mapping = aes(x = x,
-y = y,
-label = label),
-angle = 0L,
-lineheight = 1L,
-hjust = 0.5,
-vjust = 0.5,
-colour = "black",
-family = "sans",
-fontface = "plain",
-inherit.aes = FALSE,
-show.legend = FALSE)+
+                              y = 8.32247240968638,
+                              label = "Chester's Death"),
+            mapping = aes(x = x,
+                          y = y,
+                          label = label),
+            angle = 0L,
+            lineheight = 1L,
+            hjust = 0.5,
+            vjust = 0.5,
+            colour = "black",
+            family = "sans",
+            fontface = "plain",
+            inherit.aes = FALSE,
+            show.legend = FALSE)+
   geom_curve(data = data.frame(x = as.Date("2014-10-21"),
-y = 7.83474315204446,
-xend = as.Date("2017-06-08"),
-yend = 4.55069948392219),
-mapping = aes(x = x,
-y = y,
-xend = xend,
-yend = yend),
-angle = 90L,
-colour = "black",
-curvature = 0.5,
-arrow = structure(list(angle = 30,
-length = structure(0.1,
-class = "unit",
-valid.unit = 2L,
-unit = "inches"),
-ends = 2L,
-type = 2L),
-class = "arrow"),
-inherit.aes = FALSE,
-show.legend = FALSE)
+                               y = 7.83474315204446,
+                               xend = as.Date("2017-06-08"),
+                               yend = 4.55069948392219),
+             mapping = aes(x = x,
+                           y = y,
+                           xend = xend,
+                           yend = yend),
+             angle = 90L,
+             colour = "black",
+             curvature = 0.5,
+             arrow = structure(list(angle = 30,
+                                    length = structure(0.1,
+                                                       class = "unit",
+                                                       valid.unit = 2L,
+                                                       unit = "inches"),
+                                    ends = 2L,
+                                    type = 2L),
+                               class = "arrow"),
+             inherit.aes = FALSE,
+             show.legend = FALSE)+
+  theme(axis.text.y = element_text(hjust = 0))
 ```
 
 ![](Readme_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
