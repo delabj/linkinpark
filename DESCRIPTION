@@ -1,12 +1,11 @@
 Package: linkinpark
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A few datasets about the band Linkin Park
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Joshua de la Bruere
+Maintainer: Joshua de la Bruere <joshua@delabj.com>
+Description: A data package made for the 20th anniversary of Hybrid Theory by Linkin Park, containing a few datasets about the band.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
